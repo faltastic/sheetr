@@ -1,0 +1,58 @@
+.nav-and-logo {
+  padding: 0.5rem;
+  width: 100%;
+  min-height: 4rem;
+}
+
+.logo {
+  height: 3rem;
+  width: auto;
+}
+
+.nav {
+  width: 18rem;
+  float: right;
+}
+
+.nav ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+.nav ul li {
+  float: left;
+}
+
+.nav ul li a {
+  display: block;
+  text-align: right;
+  padding: 1rem;
+  font-weight: 300;
+  text-decoration: none;
+  color: #ea148c !important;
+}
+
+.nav ul li a:hover {
+  text-decoration: underline;
+}
+.nav ul li a.active {
+  font-weight: 700;
+  text-decoration: none !important;
+}
+
+@media only screen and (max-width: 767px) {
+  .nav-and-logo {
+    text-align: left;
+  }
+
+  .nav {
+    width: 100%;
+    float: none;
+  }
+  .nav ul li a {
+    display: block;
+    text-align: center;
+  }
+}

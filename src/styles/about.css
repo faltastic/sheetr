@@ -1,0 +1,32 @@
+.about {
+  background-color: #fff;
+}
+.about.large-text {
+  color: #000 !important;
+}
+
+.about h1,
+.about h2 {
+  margin-bottom: 2rem;
+  margin-top: 2rem;
+  color: #ea148c;
+}
+
+.about ul,
+#modal-inner-content ul {
+  list-style-type: circle;
+  padding-top: 0.5rem;
+}
+.about ul li,
+#modal-inner-content ul li {
+  margin-left: 2rem;
+}
+
+.about a:link {
+  text-decoration: none;
+  color: #ea148c;
+}
+.about a:hover {
+  text-decoration: underline;
+  color: #ea148c;
+}

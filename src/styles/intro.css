@@ -1,0 +1,43 @@
+.intro {
+  background-color: #000;
+}
+
+.intro img {
+  width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+  margin-bottom: 2rem;
+}
+
+.large-text {
+  width: 100%;
+  margin: 0 auto;
+  padding: 1rem;
+  padding-top: 0;
+  color: #fff;
+}
+.large-text p {
+  margin: 1.5rem 0;
+}
+
+.intro .large-text {
+  color: #fff;
+}
+
+.intro h1 {
+  font-size: 2em;
+}
+
+@media (min-width: 600px) {
+  .intro img,
+  .large-text {
+    width: 75%;
+  }
+}
+@media (min-width: 768px) {
+  .intro img,
+  .large-text {
+    width: 50%;
+  }
+}
