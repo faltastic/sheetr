@@ -12,7 +12,6 @@ export default function Program(props) {
   const [sheet, setSheet] = useState({ data: [] });
   const [dataLoading, setDataLoading] = useState(true);
   const [loadingError, setLoadingError] = useState(false);
-  //   const { params } = props.match;
 
   const fetchTabletop = async () => {
     try {
@@ -30,11 +29,12 @@ export default function Program(props) {
     }
   };
 
+  const { params } = props.match;
+
   useEffect(() => {
     setDataLoading(true);
     setLoadingError(false);
     fetchTabletop();
-    //setDataLoading(false);
   }, []);
 
   if (dataLoading) {
@@ -44,10 +44,7 @@ export default function Program(props) {
   }
   return (
     <div>
-      <EventsAll
-        events={sheet.data}
-        // openEventFromURL={params.id}
-      />
+      <EventsAll events={sheet.data} eventIDRoute={params.id} />
     </div>
   );
 }

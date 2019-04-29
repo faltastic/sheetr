@@ -1,9 +1,10 @@
 import React from "react";
 import ReactDOM from "react-dom";
+import { BrowserRouter as Router } from "react-router-dom";
 
 // import * as serviceWorker from "./serviceWorker";
 
-import { HashRouter } from "react-router-dom"; // { Route, HashRouter }
+import { Route, HashRouter } from "react-router-dom";
 import NavBar from "./NavBar.js";
 import Intro from "./Intro.js";
 import Program from "./Program/Program.js";
@@ -16,13 +17,10 @@ const routing = (
   <HashRouter>
     <div className='container'>
       <NavBar />
-      <Intro />
-      <Program />
-      <About />
-      {/* <Route exact path='/' component={Intro} />
+      <Route exact path='/' component={Intro} />
       <Route path='/about' component={About} />
-      <Route path='/program' component={Program} />
-      <Route path="/program/:id" component={App} /> */}
+      <Route exact path='/program' component={Program} />
+      <Route path='/program/:id' component={Program} />
       <Footer />
     </div>
   </HashRouter>

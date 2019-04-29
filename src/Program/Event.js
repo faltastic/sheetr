@@ -1,5 +1,6 @@
 import React from "react";
 import formatDateTime from "./formatDateTime.js";
+import { Link } from "react-router-dom";
 
 export default function Event(props) {
   const {
@@ -21,12 +22,15 @@ export default function Event(props) {
   return (
     <div className='event'>
       <div class='event-info'>
+        {/* <Link to={`/program/${id}`} replace> */}
         <img
           id={`img-event-${id}`}
           onClick={() => props.openModal(id)}
-          src={`http://www.unframedfestival.de/2019/img/events/small/${teaser_image}`}
+          src={`http://www.unframedfestival.de/2019/img/events/${teaser_image}`}
           alt={title}
         />
+        {/* </Link> */}
+
         <div class='name-and-icon'>
           <h3>{title}</h3>
         </div>
@@ -53,9 +57,10 @@ export default function Event(props) {
           <span dangerouslySetInnerHTML={createMarkup(teaser_text)} />
         </p>
 
-        <a href='#' onClick={() => props.openModal(id)}>
+        <Link to={`/program/${id}`} onClick={() => props.openModal(id)}>
+          {" "}
           Read More
-        </a>
+        </Link>
       </div>
     </div>
   );
