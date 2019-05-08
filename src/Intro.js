@@ -3,7 +3,7 @@ import "./styles/intro.css";
 
 export default function Intro(props) {
   return (
-    <section class='intro' id='the-intro'>
+      <section className='intro' id='the-intro'>
       <img
         alt='banner'
         src='http://www.unframedfestival.de/2019/img/banner-600.jpg'
@@ -13,7 +13,7 @@ export default function Intro(props) {
         <h2>1-4 May 2019</h2>
 
         <p>Welcome to the fourth edition of the Unframed Festival titled</p>
-        <p class='pink-100'>
+        <p className='pink-100'>
           <strong>"MATTER OF WORDS"</strong>
         </p>
         <p>
@@ -40,7 +40,7 @@ export default function Intro(props) {
           We may not understand all of them, we may leave with more questions
           than we came with - that&rsquo;s okay
         </p>
-        <p class='pink-100'>
+        <p className='pink-100'>
           <strong>*</strong>{" "}
           <em>
             +++++++ We do not tolerate any kind of sexism, racism and other

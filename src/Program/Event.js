@@ -22,14 +22,14 @@ export default function Event(props) {
   return (
     <div className='event'>
       <div class='event-info'>
-        {/* <Link to={`/program/${id}`} replace> */}
-        <img
-          id={`img-event-${id}`}
-          onClick={() => props.openModal(id)}
-          src={`http://www.unframedfestival.de/2019/img/events/${teaser_image}`}
-          alt={title}
-        />
-        {/* </Link> */}
+         <Link to={`/program/${id}`}>
+            <img
+              id={`img-event-${id}`}
+              onClick={() => props.openEvent(id)}
+              src={`http://www.unframedfestival.de/2019/img/events/${teaser_image}`}
+              alt={title}
+            />
+        </Link>
 
         <div class='name-and-icon'>
           <h3>{title}</h3>
@@ -57,8 +57,7 @@ export default function Event(props) {
           <span dangerouslySetInnerHTML={createMarkup(teaser_text)} />
         </p>
 
-        <Link to={`/program/${id}`} onClick={() => props.openModal(id)}>
-          {" "}
+        <Link to={`/program/${id}`} onClick={() => props.openEvent(id)}>
           Read More
         </Link>
       </div>

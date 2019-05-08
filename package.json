@@ -1,5 +1,5 @@
 {
-  "name": "unframed19",
+  "name": "festival-program-react",
   "version": "0.1.0",
   "private": true,
   "homepage": "http://www.unframedfestival.de/",
@@ -9,8 +9,7 @@
     "react-router-dom": "^5.0.0",
     "react-scripts": "2.1.5",
     "tabletop": "^1.5.2",
-    "react-masonry-css": "^1.0.12",
-    "react-responsive-modal": "^3.6.0"
+    "react-masonry-css": "^1.0.12"  
   },
   "scripts": {
     "start": "react-scripts start",

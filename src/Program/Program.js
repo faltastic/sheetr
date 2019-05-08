@@ -4,8 +4,6 @@ import Tabletop from "tabletop";
 
 import EventsAll from "./EventsAll.js";
 
-import "./../styles/program.css";
-
 const sheetID = "117qsaEFQLenUyr6RPyYMPYJtkur_7vBK_NA9hepH6xQ";
 
 export default function Program(props) {
@@ -19,10 +17,11 @@ export default function Program(props) {
         key: sheetID,
         callback: googleData => {
           setSheet({ data: googleData });
+          sessionStorage.setItem("savedsheet", JSON.stringify(googleData));
         },
         simpleSheet: true
       });
-      setDataLoading(false);
+      setDataLoading(false);    
     } catch (error) {
       console.log(error);
       setLoadingError(true);
@@ -32,9 +31,15 @@ export default function Program(props) {
   const { params } = props.match;
 
   useEffect(() => {
-    setDataLoading(true);
-    setLoadingError(false);
-    fetchTabletop();
+    const savedsheet = sessionStorage.getItem("savedsheet");
+    if (savedsheet) {
+      setSheet({ data: JSON.parse(savedsheet)});
+      setDataLoading(false);
+    }
+    else{
+      setDataLoading(true);
+      fetchTabletop();
+    }
   }, []);
 
   if (dataLoading) {
