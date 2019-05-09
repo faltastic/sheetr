@@ -5,29 +5,28 @@ import { withRouter } from "react-router";
 import Masonry from "react-masonry-css";
 
 import Event from "./Event.js";
-import EventModal from "./EventModal.js";
+import EventFull from "./EventFull.js";
+
+import "./../styles/program.css";
+
+const dayButtons = ["1 May", "2 May", "3 May", "4 May"];
+const categoryButtons = ["Party", "Exhibition"];
 
 const EventsAll = props => {
-  const dayButtons = ["1 May", "2 May", "3 May", "4 May"];
-  const categoryButtons = ["Party", "Exhibition"];
 
   const [visibleEvents, setVisibleEvents] = useState(false);
   const [theDay, setTheDay] = useState(1);
   const [theCat, setTheCat] = useState(false);
-  const [modalIsOpen, setModalIsOpen] = useState(false);
-  const [modalEventID, setModalEventID] = useState(false);
+  const [eventIsOpen, setEventIsOpen] = useState(false);
+  const [eventID, setEventID] = useState(false);
 
-  const openModal = id => {
-    setModalEventID(id);
-    setModalIsOpen(true);
-    // window.location = "https://www.bbc.co.uk";
-    props.history.replace(`/program/` + id);
-    // console.log(id);
+  const openEvent = id => {
+    setEventID(id);
+    setEventIsOpen(true);
   };
-  const closeModal = () => {
-    setModalIsOpen(false);
-    props.history.push(`/program/`);
-    // setModalEventID(0);
+  
+  const closeEvent = () => {
+    setEventIsOpen(false);
   };
 
   const filterEvents = filter => {
@@ -41,61 +40,62 @@ const EventsAll = props => {
     }
     setVisibleEvents(
       filtered.map(event => {
-        return <Event event={event} openModal={openModal} key={event.id} />;
+        return <Event event={event} openEvent={openEvent} key={event.id} />;
       })
     );
+    setTheDay(filter.day);
+    setTheCat(filter.cat);
+    sessionStorage.setItem("filters", JSON.stringify(filter));
   };
 
   useEffect(() => {
-    if (props.eventIDRoute > 0) {
-      openModal(props.eventIDRoute);
+    if (props.eventIDRoute > 0 && props.eventIDRoute <= props.events.length) {
+      openEvent(props.eventIDRoute);
     }
-  }, []);
 
-  useEffect(() => {
-    filterEvents({ day: theDay, cat: theCat });
-    console.log(props);
-  }, [props, theDay, theCat]);
+    let savedfilters = sessionStorage.getItem("filters");
+    if (savedfilters) {
+      savedfilters = JSON.parse(savedfilters);
+      setTheDay(savedfilters.day);
+      setTheCat(savedfilters.cat);
+      filterEvents(savedfilters);
+    }
+    else{
+      filterEvents({ day: theDay, cat: theCat });
+    }
+  }, [props]);
 
   return (
     <div className='program' id='the-program'>
-      <div className='buttons-and-f'>
-        <div className='buttons button-group filters-button-group'>
-          {dayButtons.map((btn, key) => {
-            return (
-              <button
-                className={"button" + (theDay === key + 1 ? " is-checked" : "")}
-                onClick={() => {
-                  setTheDay(key + 1);
-                  setTheCat(false);
-                }}>
-                {btn}
-              </button>
-            );
-          })}
-          {categoryButtons.map((btn, key) => {
-            return (
-              <button
-                className={"button" + (theCat === btn ? " is-checked" : "")}
-                onClick={() => {
-                  setTheCat(btn);
-                  setTheDay(false);
-                }}>
-                {btn}
-              </button>
-            );
-          })}
-        </div>
-      </div>
-
-      {modalIsOpen ? (
-        <EventModal
-          event={props.events.filter(event => event.id === modalEventID).pop()}
-          closeModal={closeModal}
-          // to test
-          eventIDRoute={modalEventID}
+      {eventIsOpen ? (
+        <EventFull
+          event={props.events.filter(event => event.id === eventID).pop()}
+          closeEvent={closeEvent}
         />
       ) : (
+      <div>
+        <div className='filters'>
+          <div className='buttons button-group filters-button-group'>
+            {dayButtons.map((btn, key) => {
+              return (
+                <button
+                  className={"button" + (theDay === key + 1 ? " is-checked" : "")}
+                  onClick={() => {filterEvents({day: key+1, cat:false});}}>
+                  {btn}
+                </button>
+              );
+            })}
+            {categoryButtons.map((btn, key) => {
+              return (
+                <button
+                  className={"button" + (theCat === btn ? " is-checked" : "")}
+                  onClick={() => {filterEvents({day: false, cat: btn}); }}>
+                  {btn}
+                </button>
+              );
+            })}
+          </div>
+        </div>
         <div className='all-events'>
           <Masonry
             breakpointCols={{
@@ -109,6 +109,7 @@ const EventsAll = props => {
             {visibleEvents}
           </Masonry>
         </div>
+      </div>
       )}
     </div>
   );

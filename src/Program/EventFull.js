@@ -1,10 +1,11 @@
 import React from "react";
-import Modal from "react-responsive-modal";
+import { Link } from "react-router-dom";
+
 import formatDateTime from "./formatDateTime.js";
 
-import "./../styles/modal.css";
+import "./../styles/eventfull.css";
 
-export default function EventModal(props) {
+export default function EventFull(props) {
   const createMarkup = raw => {
     return { __html: raw };
   };
@@ -27,15 +28,9 @@ export default function EventModal(props) {
     } = props.event;
 
     return (
-      <Modal
-        open={true}
-        onClose={props.closeModal}
-        center
-        classNames={{
-          overlay: "customOverlay",
-          modal: "customModal"
-        }}>
-        <div id='modal-inner-content'>
+        <div className='event-full'>
+          <Link class='pinklink' to={`/program/`} onClick={() => props.closeEvent()}>back</Link>
+          <br />
           <h1>{title}</h1>
           <img
             class='event-photo'
@@ -101,7 +96,6 @@ export default function EventModal(props) {
             </div>
           </div>
         </div>
-      </Modal>
     );
   }
 }
