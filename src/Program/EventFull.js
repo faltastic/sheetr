@@ -61,7 +61,6 @@ export default function EventFull(props) {
             </div>
           )}
           <br /> <br />
-          <div class='date'>
             <div class='icon-and-info'>
               <img
                 alt='when'
@@ -75,10 +74,9 @@ export default function EventFull(props) {
                 alt='who'
                 src='http://www.unframedfestival.de/images/ico/icons8-contacts-32.png'
               />
-              <h3>{artists}</h3>
+              <h3>{artists}</h3>  
             </div>
-          </div>
-          <div class='tickets'>
+          
             <div class='icon-and-info'>
               <img
                 alt='categories'
@@ -94,7 +92,7 @@ export default function EventFull(props) {
               />
               <h3>{location}</h3>
             </div>
-          </div>
+          
         </div>
     );
   }
