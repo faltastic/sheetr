@@ -11,7 +11,7 @@
 .event-full h1 {
   font-size: 2em;
   margin-top: 1rem;
-  margin-bottom: 0.5rem;
+  margin-bottom: 1rem;
 }
 
 .event-full img.event-photo {
@@ -24,20 +24,20 @@
   margin: 1rem auto;
 }
 
-.event-full .tickets {
+/* .event-full .tickets {
   width: 100%;
   float: left;
   display: inline-flex;
   margin: 0 auto;
-}
+} */
 
-.event-full .tickets .icon-and-info {
+/* .event-full .tickets .icon-and-info {
   width: 50%;
 }
 .event-full .tickets .icon-and-info h3 {
   float: left;
   width: 70%;
-} 
+}  */
 
 @media only screen and (min-width: 767px) {
   .event-full {
