@@ -1,0 +1,19 @@
+@import "colors";
+
+#intro {
+  background-color: $color-primary;
+  color: $color-tritary;
+  max-width: 100%;
+  img {
+    width: 100%;
+    margin-bottom: 2rem;
+  }
+}
+
+.large-text {
+  padding-top: 2rem;
+  padding-bottom: 4rem;
+  p {
+    margin: 1.5rem 0;
+  }
+}

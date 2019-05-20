@@ -1,0 +1,47 @@
+@import "colors";
+
+.event-full {
+  background: #ffffff;
+  min-height: 80vw;
+  height: 100%;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0;
+
+  h1 {
+    font-size: 2em;
+    margin-top: 1rem;
+    margin-bottom: 0.5rem;
+  }
+
+  img.event-photo {
+    display: block;
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  p {
+    margin: 1rem auto;
+  }
+
+  .tickets {
+    width: 100%;
+    float: left;
+    display: inline-flex;
+    margin: 0 auto;
+    .icon-and-info {
+      width: 50%;
+      h3 {
+        float: left;
+        width: 70%;
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: 767px) {
+  .event-full {
+    width: 60%;
+    padding: 1rem;
+  }
+}
