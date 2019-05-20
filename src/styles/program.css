@@ -48,8 +48,8 @@
 }
 
 .program h3 {
-  margin-bottom: 1rem;
-  /* margin-top: 2rem; */
+  margin-bottom: 0.25rem;
+  margin-top:0.25rem;
   font-weight: 500;
 }
 
@@ -82,7 +82,6 @@
 
 .event-info .name-and-icon h3,
 .event-info .name-and-icon h4 {
-  min-width: 50%;
   float: left;
   font-weight: normal;
 }
@@ -137,7 +136,10 @@ a:visited {
   cursor: pointer;
 }
 
-.icon-and-info img {
+.icon-and-info {
+min-height: 3rem;
+}
+  .icon-and-info img {
   width: 2rem;
   height: 2rem;
   float: left;
@@ -145,9 +147,9 @@ a:visited {
 }
 
 .icon-and-info h3 {
-  width: 80%;
-  margin-left: 0.5rem;
+  width: 100%;
   padding: 0.5rem;
+
 }
 
 /* -- Extra Small Devices, Phones -- */
@@ -157,9 +159,6 @@ a:visited {
     width: 100%;
   }
   .program .filters .buttons {
-    width: 100%;
-  }
-  .icon-and-info h3 {
     width: 100%;
   }
  
