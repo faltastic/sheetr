@@ -7,13 +7,12 @@ import Masonry from "react-masonry-css";
 import Event from "./Event.js";
 import EventFull from "./EventFull.js";
 
-import "./../styles/program.css";
+import "./../styles/program.scss";
 
 const dayButtons = ["1 May", "2 May", "3 May", "4 May"];
 const categoryButtons = ["Party", "Exhibition"];
 
 const EventsAll = props => {
-
   const [visibleEvents, setVisibleEvents] = useState(false);
   const [theDay, setTheDay] = useState(1);
   const [theCat, setTheCat] = useState(false);
@@ -24,7 +23,7 @@ const EventsAll = props => {
     setEventID(id);
     setEventIsOpen(true);
   };
-  
+
   const closeEvent = () => {
     setEventIsOpen(false);
   };
@@ -59,8 +58,7 @@ const EventsAll = props => {
       setTheDay(savedfilters.day);
       setTheCat(savedfilters.cat);
       filterEvents(savedfilters);
-    }
-    else{
+    } else {
       filterEvents({ day: theDay, cat: theCat });
     }
   }, [props]);
@@ -73,43 +71,49 @@ const EventsAll = props => {
           closeEvent={closeEvent}
         />
       ) : (
-      <div>
-        <div className='filters'>
-          <div className='buttons button-group filters-button-group'>
-            {dayButtons.map((btn, key) => {
-              return (
-                <button
-                  className={"button" + (theDay === key + 1 ? " is-checked" : "")}
-                  onClick={() => {filterEvents({day: key+1, cat:false});}}>
-                  {btn}
-                </button>
-              );
-            })}
-            {categoryButtons.map((btn, key) => {
-              return (
-                <button
-                  className={"button" + (theCat === btn ? " is-checked" : "")}
-                  onClick={() => {filterEvents({day: false, cat: btn}); }}>
-                  {btn}
-                </button>
-              );
-            })}
+        <div>
+          <div className='filters'>
+            <div className='buttons button-group filters-button-group'>
+              {dayButtons.map((btn, key) => {
+                return (
+                  <button
+                    className={
+                      "button" + (theDay === key + 1 ? " is-checked" : "")
+                    }
+                    onClick={() => {
+                      filterEvents({ day: key + 1, cat: false });
+                    }}>
+                    {btn}
+                  </button>
+                );
+              })}
+              {categoryButtons.map((btn, key) => {
+                return (
+                  <button
+                    className={"button" + (theCat === btn ? " is-checked" : "")}
+                    onClick={() => {
+                      filterEvents({ day: false, cat: btn });
+                    }}>
+                    {btn}
+                  </button>
+                );
+              })}
+            </div>
+          </div>
+          <div className='all-events'>
+            <Masonry
+              breakpointCols={{
+                default: 4,
+                960: 3,
+                768: 2,
+                600: 1
+              }}
+              className='my-masonry-grid'
+              columnClassName='my-masonry-grid_column'>
+              {visibleEvents}
+            </Masonry>
           </div>
         </div>
-        <div className='all-events'>
-          <Masonry
-            breakpointCols={{
-              default: 4,
-              960: 3,
-              768: 2,
-              600: 1
-            }}
-            className='my-masonry-grid'
-            columnClassName='my-masonry-grid_column'>
-            {visibleEvents}
-          </Masonry>
-        </div>
-      </div>
       )}
     </div>
   );

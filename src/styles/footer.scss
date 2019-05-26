@@ -1,0 +1,18 @@
+@import "colors";
+
+footer {
+  margin-top: 2rem;
+  background: $color-primary;
+  color: #fff;
+  padding: 2rem;
+  padding-bottom: 0rem;
+  p {
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+  }
+
+  a:link {
+    color: $color-secondary;
+    text-decoration: underline;
+  }
+}

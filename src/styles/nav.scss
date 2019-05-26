@@ -1,0 +1,35 @@
+@import "colors";
+
+img.logo {
+  height: 3rem;
+  width: auto;
+}
+
+.nav {
+  ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    li {
+      float: left;
+      font-weight: 700;
+      text-decoration: none !important;
+      a {
+        display: block;
+        text-align: right;
+        padding: 1rem;
+        font-weight: 300;
+        text-decoration: none;
+        color: $color-secondary !important;
+      }
+      a:hover {
+        text-decoration: underline;
+      }
+      a.active {
+        font-weight: 700;
+        text-decoration: none !important;
+      }
+    }
+  }
+}

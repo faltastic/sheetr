@@ -1,0 +1,30 @@
+@import "colors";
+
+.about {
+  .large-text {
+    color: $color-primary !important;
+  }
+  h1,
+  h2 {
+    margin-bottom: 2rem;
+    margin-top: 2rem;
+    color: $color-secondary;
+  }
+  a:link {
+    text-decoration: none;
+    color: $color-secondary;
+  }
+  a:hover {
+    text-decoration: underline;
+    color: $color-secondary;
+  }
+  ul {
+    list-style-type: circle;
+    padding-top: 0.5rem;
+
+    li {
+      margin-left: 2rem;
+      color: $color-primary;
+    }
+  }
+}

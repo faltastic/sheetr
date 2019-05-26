@@ -2,7 +2,6 @@ import React from "react";
 import ReactDOM from "react-dom";
 // import { BrowserRouter as Router } from "react-router-dom";
 
-
 // import * as serviceWorker from "./serviceWorker";
 
 import { Route, HashRouter } from "react-router-dom";
@@ -12,7 +11,8 @@ import Program from "./Program/Program.js";
 import About from "./About.js";
 import Footer from "./Footer.js";
 
-import "./styles/base.css";
+// import { Grid, Row, Col } from "react-flexbox-grid";
+import "./styles/base.scss";
 
 const routing = (
   <HashRouter>
