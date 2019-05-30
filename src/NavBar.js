@@ -9,14 +9,15 @@ export default function NavBar(props) {
     <Grid fluid>
       <Col xs={12}>
         <Row start='md' center='xs'>
-          <Col xs={12} md={2}>
-            <img
+          <Col xs={12} md={6}>
+            {/* <img
               className='logo'
-              src='http://www.unframedfestival.de/images/logo.png'
+              src='LOGO_URL'
               alt='logo'
-            />
+            /> */}
+            <h1>SHEETR DEMO</h1>
           </Col>
-          <Col xs={12} md={10}>
+          <Col xs={12} md={6}>
             <Row center='xs' end='md'>
               <div className='nav'>
                 <ul>
