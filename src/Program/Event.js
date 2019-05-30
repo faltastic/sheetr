@@ -11,8 +11,9 @@ export default function Event(props) {
     times,
     location,
     categories,
-    teaser_image,
-    teaser_text
+    //teaser_image,
+    teaser_text,
+    image_teaser
   } = props.event;
 
   const createMarkup = raw => {
@@ -21,30 +22,30 @@ export default function Event(props) {
 
   return (
     <div className='event'>
-      <div class='event-info'>
+      <div className='event-info'>
          <Link to={`/program/${id}`}>
             <img
               id={`img-event-${id}`}
               onClick={() => props.openEvent(id)}
-              src={`http://www.unframedfestival.de/2019/img/events/${teaser_image}`}
+              src={`https://drive.google.com/uc?id=${image_teaser}`}
               alt={title}
             />
         </Link>
 
-        <div class='name-and-icon'>
+        <div className='name-and-icon'>
           <h3>{title}</h3>
         </div>
-        <div class='name-and-icon'>
+        <div className='name-and-icon'>
           <h4>{artists}</h4>
         </div>
-        <div class='name-and-icon'>
+        <div className='name-and-icon'>
           <img
             src='http://www.unframedfestival.de/images/ico/icons8-calendar-50.png'
             alt='calender'
           />
           <h5>{formatDateTime(days, times, id)}</h5>
         </div>
-        <div class='name-and-icon'>
+        <div className='name-and-icon'>
           <img
             src='http://www.unframedfestival.de/images/ico/icons8-two-tickets-50.png'
             alt='category'

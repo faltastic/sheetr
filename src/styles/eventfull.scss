@@ -9,14 +9,17 @@
   padding: 0;
 
   h1 {
-    font-size: 2em;
+    font-size: 2rem;
     margin-top: 1rem;
     margin-bottom: 0.5rem;
   }
 
   img.event-photo {
     display: block;
-    width: 100%;
+    max-width:100%;
+    max-height:80vh;
+    height: auto;
+    width:auto;
     margin: 0 auto;
   }
 
@@ -24,24 +27,30 @@
     margin: 1rem auto;
   }
 
-  .tickets {
-    width: 100%;
-    float: left;
-    display: inline-flex;
-    margin: 0 auto;
-    .icon-and-info {
-      width: 50%;
-      h3 {
-        float: left;
-        width: 70%;
-      }
+  .icon-and-info {
+    display: block;
+    img{
+      width: 2rem;
+      margin-right: 1rem;
+      margin-top: 1rem;
+    }
+    h3 {
+      display: inline-block;
+      width: 70%;
     }
   }
+
+
 }
 
 @media only screen and (min-width: 767px) {
   .event-full {
-    width: 60%;
+    width: 100%;
     padding: 1rem;
+
+    p, .icon-and-info{
+      width: 80%;
+      margin: 0;
+    }
   }
 }

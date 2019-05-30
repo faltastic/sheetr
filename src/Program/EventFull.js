@@ -21,10 +21,12 @@ export default function EventFull(props) {
       times,
       location,
       categories,
-      images,
+      image_teaser,
       text,
       language,
-      links
+      links,
+      photoCredit,
+      photoLink
     } = props.event;
 
     return (
@@ -33,13 +35,13 @@ export default function EventFull(props) {
           class='pinklink'
           to={`/program/`}
           onClick={() => props.closeEvent()}>
-          back
+          &lsaquo;  BACK 
         </Link>
         <br />
         <h1>{title}</h1>
         <img
           class='event-photo'
-          src={`http://www.unframedfestival.de/2019/img/events/${images}`}
+          src={`https://drive.google.com/uc?id=${image_teaser}`}
           alt={title}
         />
         <br />
@@ -50,6 +52,12 @@ export default function EventFull(props) {
         )}
         <p dangerouslySetInnerHTML={createMarkup(text)} />
         <br />
+
+        Photo by <a class='pinklink' target="_blank" href={photoLink}>
+                    {photoCredit}
+                  </a>
+                  
+
         {links && (
           <div>
             {" "}

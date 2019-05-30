@@ -32,7 +32,7 @@ export default function Program(props) {
 
   useEffect(() => {
     const savedsheet = sessionStorage.getItem("savedsheet");
-    if (savedsheet) {
+    if (savedsheet && process.env.REACT_APP_RELOAD_SHEET_ALWAYS !== "true" ) {
       setSheet({ data: JSON.parse(savedsheet)});
       setDataLoading(false);
     }

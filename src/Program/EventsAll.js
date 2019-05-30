@@ -103,7 +103,7 @@ const EventsAll = props => {
           <div className='all-events'>
             <Masonry
               breakpointCols={{
-                default: 4,
+                default: 3,
                 960: 3,
                 768: 2,
                 600: 1
