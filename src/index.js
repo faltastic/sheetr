@@ -7,7 +7,7 @@ import ReactDOM from "react-dom";
 import { Route, HashRouter } from "react-router-dom";
 import NavBar from "./NavBar.js";
 import Intro from "./Intro.js";
-import Program from "./Program/Program.js";
+import Sheetr from "./Sheetr/Sheetr.js";
 import About from "./About.js";
 import Footer from "./Footer.js";
 
@@ -20,8 +20,8 @@ const routing = (
       <NavBar />
       <Route exact path='/' component={Intro} />
       <Route path='/about' component={About} />
-      <Route exact path='/program' component={Program} />
-      <Route path='/program/:id' component={Program} />
+      <Route exact path='/program' component={Sheetr} />
+      <Route path='/program/:id' component={Sheetr} />
       <Footer />
     </div>
   </HashRouter>

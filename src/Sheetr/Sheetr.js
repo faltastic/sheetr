@@ -2,11 +2,11 @@ import React from "react";
 import { useState, useEffect } from "react";
 import Tabletop from "tabletop";
 
-import EventsAll from "./EventsAll.js";
+import EventsAll from "./AllArticles.js";
 
 const sheetID = "117qsaEFQLenUyr6RPyYMPYJtkur_7vBK_NA9hepH6xQ";
 
-export default function Program(props) {
+export default function Sheetr(props) {
   const [sheet, setSheet] = useState({ data: [] });
   const [dataLoading, setDataLoading] = useState(true);
   const [loadingError, setLoadingError] = useState(false);
@@ -49,7 +49,7 @@ export default function Program(props) {
   }
   return (
     <div>
-      <EventsAll events={sheet.data} eventIDRoute={params.id} />
+      <EventsAll articles={sheet.data} articleIDRoute={params.id} />
     </div>
   );
 }

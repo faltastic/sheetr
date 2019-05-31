@@ -4,13 +4,13 @@ import "./styles/intro.scss";
 
 export default function Intro(props) {
   return (
-    <section id='intro'>
-      <Grid fluid>
-        <Row>
-          <Col xs={12} sm={12} md={8} lg={6} mdOffset={2} lgOffset={3}>
+    <section >
+      <Grid fluid >
+        <Row id='intro'>
+          <Col xs={12}>
             <img
               alt='banner'
-              src='http://www.unframedfestival.de/2019/img/banner-600.jpg'
+              src='https://drive.google.com/uc?id=1tJD_nYc43SqmWbCzgmbSIKpoxR-BevrT'
             />
 
             <div className='large-text'>
@@ -23,7 +23,14 @@ export default function Intro(props) {
               <p className='pink-100'>
                 <strong>"MATTER OF WORDS"</strong>
               </p>
-              <p>
+              
+            </div>
+            </Col>
+            </Row>
+            <Row>
+          <Col xs={12}>
+            <div id="intro-inverse">
+            <p>
                 As unframed people, we want to focus on socio-political debates,
                 that are struggling to exist in our societies.
               </p>

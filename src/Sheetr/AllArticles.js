@@ -4,42 +4,42 @@ import { withRouter } from "react-router";
 
 import Masonry from "react-masonry-css";
 
-import Event from "./Event.js";
-import EventFull from "./EventFull.js";
+import Article from "./Article.js";
+import ArticleFull from "./ArticleOpen.js";
 
 import "./../styles/program.scss";
 
 const dayButtons = ["1 May", "2 May", "3 May", "4 May"];
 const categoryButtons = ["Party", "Exhibition"];
 
-const EventsAll = props => {
-  const [visibleEvents, setVisibleEvents] = useState(false);
+const ArticlesAll = props => {
+  const [visibleArticles, setVisibleArticles] = useState(false);
   const [theDay, setTheDay] = useState(1);
   const [theCat, setTheCat] = useState(false);
-  const [eventIsOpen, setEventIsOpen] = useState(false);
-  const [eventID, setEventID] = useState(false);
+  const [articleIsOpen, setArticleIsOpen] = useState(false);
+  const [articleID, setArticleID] = useState(false);
 
-  const openEvent = id => {
-    setEventID(id);
-    setEventIsOpen(true);
+  const openArticle = id => {
+    setArticleID(id);
+    setArticleIsOpen(true);
   };
 
-  const closeEvent = () => {
-    setEventIsOpen(false);
+  const closeArticle = () => {
+    setArticleIsOpen(false);
   };
 
-  const filterEvents = filter => {
-    let filtered = props.events;
+  const filterArticles = filter => {
+    let filtered = props.articles;
     if (filter.day !== false) {
-      filtered = filtered.filter(event => event.days.includes(filter.day));
+      filtered = filtered.filter(article => article.days.includes(filter.day));
     } else if (filter.cat !== false) {
-      filtered = filtered.filter(event =>
-        event.categories.includes(filter.cat)
+      filtered = filtered.filter(article =>
+        article.categories.includes(filter.cat)
       );
     }
-    setVisibleEvents(
-      filtered.map(event => {
-        return <Event event={event} openEvent={openEvent} key={event.id} />;
+    setVisibleArticles(
+      filtered.map(article => {
+        return <Article article={article} openArticle={openArticle} key={article.id} />;
       })
     );
     setTheDay(filter.day);
@@ -48,8 +48,8 @@ const EventsAll = props => {
   };
 
   useEffect(() => {
-    if (props.eventIDRoute > 0 && props.eventIDRoute <= props.events.length) {
-      openEvent(props.eventIDRoute);
+    if (props.articleIDRoute > 0 && props.articleIDRoute <= props.articles.length) {
+      openArticle(props.articleIDRoute);
     }
 
     let savedfilters = sessionStorage.getItem("filters");
@@ -57,18 +57,18 @@ const EventsAll = props => {
       savedfilters = JSON.parse(savedfilters);
       setTheDay(savedfilters.day);
       setTheCat(savedfilters.cat);
-      filterEvents(savedfilters);
+      filterArticles(savedfilters);
     } else {
-      filterEvents({ day: theDay, cat: theCat });
+      filterArticles({ day: theDay, cat: theCat });
     }
   }, [props]);
 
   return (
     <div className='program' id='the-program'>
-      {eventIsOpen ? (
-        <EventFull
-          event={props.events.filter(event => event.id === eventID).pop()}
-          closeEvent={closeEvent}
+      {articleIsOpen ? (
+        <ArticleFull
+          article={props.articles.filter(article => article.id === articleID).pop()}
+          closeArticle={closeArticle}
         />
       ) : (
         <div>
@@ -81,7 +81,7 @@ const EventsAll = props => {
                       "button" + (theDay === key + 1 ? " is-checked" : "")
                     }
                     onClick={() => {
-                      filterEvents({ day: key + 1, cat: false });
+                      filterArticles({ day: key + 1, cat: false });
                     }}>
                     {btn}
                   </button>
@@ -92,7 +92,7 @@ const EventsAll = props => {
                   <button
                     className={"button" + (theCat === btn ? " is-checked" : "")}
                     onClick={() => {
-                      filterEvents({ day: false, cat: btn });
+                      filterArticles({ day: false, cat: btn });
                     }}>
                     {btn}
                   </button>
@@ -100,7 +100,7 @@ const EventsAll = props => {
               })}
             </div>
           </div>
-          <div className='all-events'>
+          <div className='all-articles'>
             <Masonry
               breakpointCols={{
                 default: 3,
@@ -110,7 +110,7 @@ const EventsAll = props => {
               }}
               className='my-masonry-grid'
               columnClassName='my-masonry-grid_column'>
-              {visibleEvents}
+              {visibleArticles}
             </Masonry>
           </div>
         </div>
@@ -119,4 +119,4 @@ const EventsAll = props => {
   );
 };
 
-export default withRouter(EventsAll);
+export default withRouter(ArticlesAll);

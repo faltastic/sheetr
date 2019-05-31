@@ -9,6 +9,7 @@
     "react-dom": "^16.8.3",
     "react-flexbox-grid": "^2.1.2",
     "react-masonry-css": "^1.0.12",
+    "react-progressive-image": "^0.6.0",
     "react-router-dom": "^5.0.0",
     "react-scripts": "2.1.5",
     "tabletop": "^1.5.2"

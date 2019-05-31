@@ -4,16 +4,26 @@
   background-color: $color-primary;
   color: $color-tritary;
   max-width: 100%;
+  margin: 1rem;
+  padding: 1rem;
+  text-align:center;
   img {
     width: 100%;
-    margin-bottom: 2rem;
   }
 }
 
 .large-text {
   padding-top: 2rem;
-  padding-bottom: 4rem;
+  padding-bottom: 2rem;
   p {
     margin: 1.5rem 0;
   }
+}
+
+#intro-inverse{
+  width: 60%;
+  margin: 1rem auto;
+  padding: 2rem;
+  background-color:$color-tritary;
+  color:  $color-primary ;
 }
