@@ -6,7 +6,7 @@
   overflow: auto;
   margin-top: 1rem;
   .filters {
-    margin: 0 auto;
+    margin: 2rem auto;
     text-align: center;
     .buttons {
       display: inline-block;
@@ -111,6 +111,14 @@
   }
   .program .filters .buttons {
     width: 100%;
+  }
+}
+
+@media only screen and (min-width: 767px) {
+  .program {
+    .filters {
+      margin: 4rem auto;
+    }
   }
 }
 // Grid

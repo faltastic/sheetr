@@ -37,7 +37,7 @@ export default function Article(props) {
               {(src, loading) =>  ( <img
                   id={`img-article-${id}`}
                   onClick={() => props.openArticle(id)}
-                  style={{ padding: loading ? "4rem" : "0" }}
+                  style={{ margin: loading ? "33.3%" : "0" , width: loading ? "33.3%" : "100%" }}
                   src={src}
                   alt={title}
                 />

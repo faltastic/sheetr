@@ -21,6 +21,7 @@ export default function Sheetr(props) {
         },
         simpleSheet: true
       });
+
       setDataLoading(false);    
     } catch (error) {
       console.log(error);
