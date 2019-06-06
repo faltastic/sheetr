@@ -5,26 +5,22 @@
   color: $color-tritary;
   width: 100%;
   margin-top: 1rem;
-  text-align:center;
+  text-align: center;
   img {
     width: 100%;
+    padding: 2rem 0;
+    @media only screen and (min-width: 767px) {
+      padding: 6rem 3rem;
+    }
   }
 }
 
-.large-text {
-  padding: 2rem;
-}
-
-#intro-inverse{
+#intro-inverse {
   width: 100%;
-  margin: 0 auto;
-  margin-top: 2rem;
-  background-color:$color-tritary;
-  color:  $color-primary ;
-}
-
-@media only screen and (min-width: 767px) {
-  #intro-inverse{
-    width: 60%;
+  margin: 4rem auto;
+  background-color: $color-tritary;
+  color: $color-primary;
+  p {
+    margin-bottom: 2rem;
   }
 }

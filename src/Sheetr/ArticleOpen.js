@@ -26,85 +26,83 @@ export default function ArticleOpen(props) {
       image_teaser,
       text,
       photoCredit,
-      photoLink
+      photoLink,
     } = props.article;
-
     return (
-    <Grid fluid className='article-open'>
-      <Col xs={12}> 
-        <Link
-          class='pinklink'
-          to={`/program/`}
-          onClick={() => props.closeArticle()}>
-          &lsaquo;  BACK 
-        </Link>
-        <br />
-        <h2>{title}</h2>
-        {/* <img
-          class='article-photo'
-          src={`https://drive.google.com/uc?id=${image_teaser}`}
-          alt={title}
-        /> */}
-        <br />
+      <Grid fluid className="article-open">
+        <Col xs={12}>
+          <Link
+            className="pinklink"
+            to={`/program/`}
+            onClick={() => props.closeArticle()}
+          >
+            &lsaquo; BACK
+          </Link>
+          <br />
+          <h2>{title}</h2>
+          <br />
 
-        <ProgressiveImage src={`https://drive.google.com/uc?id=${image_teaser}`} 
-          //placeholder='https://drive.google.com/uc?id=1tJD_nYc43SqmWbCzgmbSIKpoxR-BevrT'>
-          placeholder={`https://drive.google.com/uc?id=1m_AKM-NObKai64_ErCrVm8uQD3009m5z`}>
-          {(src, loading) => (
-            <img 
-              class="article-photo"
-              style={{ margin: loading ? "10% 33.3% 10% 33.3%" : "0 auto" , maxWidth: loading ? "33.3%" : "100%" }}
-              src={src} 
-              alt={title} 
-            />
-          )}
-        </ProgressiveImage>
-        <Row>
-          <Col xs={12} md={8}>
-
-            <p dangerouslySetInnerHTML={createMarkup(text)} />
-            <br />
-
-            Photo by <a class='pinklink' href={photoLink}>
-                        {photoCredit}
-                      </a>        
-        </Col>
-        <Col xs={12} md={4}>
+          <ProgressiveImage
+            src={`https://drive.google.com/uc?id=${image_teaser}`}
+            //placeholder='https://drive.google.com/uc?id=1tJD_nYc43SqmWbCzgmbSIKpoxR-BevrT'>
+            placeholder={`https://drive.google.com/uc?id=1m_AKM-NObKai64_ErCrVm8uQD3009m5z`}
+          >
+            {(src, loading) => (
+              <img
+                className="article-photo"
+                style={{
+                  margin: loading ? "10% 33.3% 10% 33.3%" : "0 auto",
+                  maxWidth: loading ? "33.3%" : "100%",
+                }}
+                src={src}
+                alt={title}
+              />
+            )}
+          </ProgressiveImage>
           <Row>
-        
-            <div class='icon-and-info'>
-              <img
-                alt='when'
-                src='http://www.unframedfestival.de/images/ico/icons8-calendar-50.png'
-              />
-              <h4>{formatDateTime(days, times, id)}</h4>
-            </div>
-            <div class='icon-and-info'>
-              <img
-                alt='who'
-                src='http://www.unframedfestival.de/images/ico/icons8-contacts-32.png'
-              />
-              <h4>{artists}</h4>
-            </div>
-            <div class='icon-and-info'>
-              <img
-                alt='categories'
-                src='http://www.unframedfestival.de/images/ico/icons8-two-tickets-50.png'
-              />
-              <h4>{categories}</h4>
-            </div>
-            <div class='icon-and-info'>
-              <img
-                alt='where'
-                src='http://www.unframedfestival.de/images/ico/icons8-map-pin-50.png'
-              />
-              <h4>{location}</h4>
-            </div>
-            </Row>
-          </Col>
-        </Row>
-      </Col>
-    </Grid>
+            <Col xs={12} md={8}>
+              <p dangerouslySetInnerHTML={createMarkup(text)} />
+              <br />
+              Photo by{" "}
+              <a className="pinklink" href={photoLink}>
+                {photoCredit}
+              </a>
+            </Col>
+            <Col xs={12} md={4}>
+              <Row>
+                <div className="icon-and-info">
+                  <img
+                    alt="when"
+                    src="http://www.unframedfestival.de/images/ico/icons8-calendar-50.png"
+                  />
+                  <h4>{formatDateTime(days, times, id)}</h4>
+                </div>
+                <div className="icon-and-info">
+                  <img
+                    alt="who"
+                    src="http://www.unframedfestival.de/images/ico/icons8-contacts-32.png"
+                  />
+                  <h4>{artists}</h4>
+                </div>
+                <div className="icon-and-info">
+                  <img
+                    alt="categories"
+                    src="http://www.unframedfestival.de/images/ico/icons8-two-tickets-50.png"
+                  />
+                  <h4>{categories}</h4>
+                </div>
+                <div className="icon-and-info">
+                  <img
+                    alt="where"
+                    src="http://www.unframedfestival.de/images/ico/icons8-map-pin-50.png"
+                  />
+                  <h4>{location}</h4>
+                </div>
+              </Row>
+            </Col>
+          </Row>
+        </Col>
+      </Grid>
     );
   }
 }

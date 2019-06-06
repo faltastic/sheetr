@@ -5,7 +5,7 @@ import { withRouter } from "react-router";
 import Masonry from "react-masonry-css";
 
 import Article from "./Article.js";
-import ArticleFull from "./ArticleOpen.js";
+import ArticleOpen from "./ArticleOpen.js";
 
 import "./../styles/program.scss";
 
@@ -39,7 +39,13 @@ const ArticlesAll = props => {
     }
     setVisibleArticles(
       filtered.map(article => {
-        return <Article article={article} openArticle={openArticle} key={article.id} />;
+        return (
+          <Article
+            article={article}
+            openArticle={openArticle}
+            key={article.id}
+          />
+        );
       })
     );
     setTheDay(filter.day);
@@ -48,7 +54,10 @@ const ArticlesAll = props => {
   };
 
   useEffect(() => {
-    if (props.articleIDRoute > 0 && props.articleIDRoute <= props.articles.length) {
+    if (
+      props.articleIDRoute > 0 &&
+      props.articleIDRoute <= props.articles.length
+    ) {
       openArticle(props.articleIDRoute);
     }
 
@@ -64,25 +73,29 @@ const ArticlesAll = props => {
   }, [props]);
 
   return (
-    <div className='program' id='the-program'>
+    <div className="program" id="the-program">
       {articleIsOpen ? (
-        <ArticleFull
-          article={props.articles.filter(article => article.id === articleID).pop()}
+        <ArticleOpen
+          article={props.articles
+            .filter(article => article.id === articleID)
+            .pop()}
           closeArticle={closeArticle}
         />
       ) : (
         <div>
-          <div className='filters'>
-            <div className='buttons button-group filters-button-group'>
+          <div className="filters">
+            <div className="buttons button-group filters-button-group">
               {dayButtons.map((btn, key) => {
                 return (
                   <button
+                    key={key}
                     className={
                       "button" + (theDay === key + 1 ? " is-checked" : "")
                     }
                     onClick={() => {
                       filterArticles({ day: key + 1, cat: false });
-                    }}>
+                    }}
+                  >
                     {btn}
                   </button>
                 );
@@ -90,26 +103,29 @@ const ArticlesAll = props => {
               {categoryButtons.map((btn, key) => {
                 return (
                   <button
+                    key={key}
                     className={"button" + (theCat === btn ? " is-checked" : "")}
                     onClick={() => {
                       filterArticles({ day: false, cat: btn });
-                    }}>
+                    }}
+                  >
                     {btn}
                   </button>
                 );
               })}
             </div>
           </div>
-          <div className='all-articles'>
+          <div className="all-articles">
             <Masonry
               breakpointCols={{
                 default: 3,
                 960: 3,
                 768: 2,
-                600: 1
+                600: 1,
               }}
-              className='my-masonry-grid'
-              columnClassName='my-masonry-grid_column'>
+              className="my-masonry-grid"
+              columnClassName="my-masonry-grid_column"
+            >
               {visibleArticles}
             </Masonry>
           </div>

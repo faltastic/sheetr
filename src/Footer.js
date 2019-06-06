@@ -14,17 +14,17 @@ export default function Footer(props) {
                 The Unframed Festival is an autonomous self organised project of
                 the Unframed Society.
               </p>
-              <a href='http://www.facebook.com/UnframedFestival/'>
+              <a href="http://www.facebook.com/UnframedFestival/">
                 <img
-                  alt='facebook'
-                  src='http://www.unframedfestival.de/images/ico/social/facebook-3-48.png'
+                  alt="facebook"
+                  src="http://www.unframedfestival.de/images/ico/social/facebook-3-48.png"
                 />
               </a>
               &nbsp; &nbsp;&nbsp;
-              <a href='http://www.instagram.com/unframed_festival/'>
+              <a href="http://www.instagram.com/unframed_festival/">
                 <img
-                  alt='instagram'
-                  src='http://www.unframedfestival.de/images/ico/social/instagram-48.png'
+                  alt="instagram"
+                  src="http://www.unframedfestival.de/images/ico/social/instagram-48.png"
                 />
               </a>
               <p>

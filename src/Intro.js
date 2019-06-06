@@ -1,36 +1,48 @@
 import React from "react";
 import { Grid, Row, Col } from "react-flexbox-grid";
+import ProgressiveImage from "react-progressive-image";
+
 import "./styles/intro.scss";
 
 export default function Intro(props) {
   return (
-    <section >
-      <Grid fluid >
-        <Row id='intro'>
+    <section>
+      <Grid fluid>
+        <Row id="intro">
           <Col xs={12}>
-            <img
-              alt='banner'
-              src='https://drive.google.com/uc?id=1tJD_nYc43SqmWbCzgmbSIKpoxR-BevrT'
-            />
+            <ProgressiveImage
+              src={`https://drive.google.com/uc?id=1cs6SGriScKVD20wIVkUVi4UNw_unJQ4q`}
+              placeholder={`https://drive.google.com/uc?id=1m_AKM-NObKai64_ErCrVm8uQD3009m5z`}
+            >
+              {(src, loading) => (
+                <img
+                  style={{
+                    margin: loading ? "33.3%" : "0",
+                    width: loading ? "33.3%" : "100%",
+                  }}
+                  src={src}
+                  alt="banner"
+                />
+              )}
+            </ProgressiveImage>
 
-            <div className='large-text'>
-              <h1>Our Festival</h1>
+            <div className="large-text">
+              {/* <h1>Our Festival</h1> */}
               <h2>1-4 May 2019</h2>
 
               <p>
                 Welcome to the fourth edition of the Unframed Festival titled
               </p>
-              <p className='pink-100'>
+              <p className="highlighted">
                 <strong>"MATTER OF WORDS"</strong>
               </p>
-              
             </div>
-            </Col>
-            </Row>
-            <Row>
-          <Col xs={12}>
+          </Col>
+        </Row>
+        <Row>
+          <Col xs={12} md={8} mdOffset={2}>
             <div id="intro-inverse">
-            <p>
+              <p>
                 As unframed people, we want to focus on socio-political debates,
                 that are struggling to exist in our societies.
               </p>
@@ -54,7 +66,7 @@ export default function Intro(props) {
                 We may not understand all of them, we may leave with more
                 questions than we came with - that&rsquo;s okay
               </p>
-              <p className='pink-100'>
+              <p className="highlighted">
                 <strong>*</strong>{" "}
                 <em>
                   +++++++ We do not tolerate any kind of sexism, racism and

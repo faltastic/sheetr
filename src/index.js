@@ -16,12 +16,12 @@ import "./styles/base.scss";
 
 const routing = (
   <HashRouter>
-    <div className='container'>
+    <div className="container">
       <NavBar />
-      <Route exact path='/' component={Intro} />
-      <Route path='/about' component={About} />
-      <Route exact path='/program' component={Sheetr} />
-      <Route path='/program/:id' component={Sheetr} />
+      <Route exact path="/" component={Intro} />
+      <Route path="/about" component={About} />
+      <Route exact path="/program" component={Sheetr} />
+      <Route path="/program/:id" component={Sheetr} />
       <Footer />
     </div>
   </HashRouter>

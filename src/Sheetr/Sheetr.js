@@ -19,10 +19,10 @@ export default function Sheetr(props) {
           setSheet({ data: googleData });
           sessionStorage.setItem("savedsheet", JSON.stringify(googleData));
         },
-        simpleSheet: true
+        simpleSheet: true,
       });
 
-      setDataLoading(false);    
+      setDataLoading(false);
     } catch (error) {
       console.log(error);
       setLoadingError(true);
@@ -33,11 +33,10 @@ export default function Sheetr(props) {
 
   useEffect(() => {
     const savedsheet = sessionStorage.getItem("savedsheet");
-    if (savedsheet && process.env.REACT_APP_RELOAD_SHEET_ALWAYS !== "true" ) {
-      setSheet({ data: JSON.parse(savedsheet)});
+    if (savedsheet && process.env.REACT_APP_RELOAD_SHEET_ALWAYS !== "true") {
+      setSheet({ data: JSON.parse(savedsheet) });
       setDataLoading(false);
-    }
-    else{
+    } else {
       setDataLoading(true);
       fetchTabletop();
     }

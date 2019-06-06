@@ -4,10 +4,10 @@ import "./styles/about.scss";
 
 export default function About() {
   return (
-    <section className='about large-text'>
+    <section className="about large-text">
       <Grid fluid>
         <Row>
-          <Col xs={12} sm={12} md={8} lg={6} mdOffset={2} lgOffset={3}>
+          <Col xs={12} md={8} mdOffset={2}>
             <h2> About the Festival </h2>
             <p>
               The UNFRAMED FESTIVAL is an open format festival using Cultures
@@ -62,7 +62,7 @@ export default function About() {
               Our association “Unframed e.V.” supports the organisation of the
               Unframed Festival together with other socio-political events.
             </p>
-            <p class='pink-100'>
+            <p class="highlighted">
               * +++++++ We do not tolerate any kind of sexism, racism and other
               forms of discrimination ++++++
             </p>
