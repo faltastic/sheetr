@@ -27,12 +27,14 @@ export default function Intro(props) {
             </ProgressiveImage>
 
             <div className="large-text">
-              {/* <h1>Our Festival</h1> */}
-              <h2>1-4 May 2019</h2>
+              <h2>
+                React for frontend <br />+ <br />
+                Google Sheets for content
+              </h2>
+              <br />
 
-              <p>
-                Welcome to the fourth edition of the Unframed Festival titled
-              </p>
+              <p>A React App template with a Google Sheets backend</p>
+
               <p className="highlighted">
                 <strong>"MATTER OF WORDS"</strong>
               </p>

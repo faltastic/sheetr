@@ -8,12 +8,15 @@
   .filters {
     margin: 2rem auto;
     text-align: center;
+    @media only screen and (min-width: 767px) {
+      margin: 4rem auto;
+    }
+
     .buttons {
       display: inline-block;
       button {
-        color: #fff;
+        color: $color-tritary;
         background-color: $color-primary;
-        font-family: "Space Mono", monospace;
         font-size: 0.875rem;
         padding: 1rem 1.5rem;
         margin-bottom: 1rem;
@@ -29,6 +32,20 @@
         color: #fff;
       }
     }
+  }
+}
+
+/* -- Extra Small Devices, Phones -- */
+
+@media only screen and (max-width: 767px) {
+  .container {
+    width: 100%;
+  }
+  .program {
+    margin-top: 0;
+  }
+  .program .filters .buttons {
+    width: 100%;
   }
 }
 
@@ -50,9 +67,9 @@
     border: 1px solid #fff;
     border-radius: 3px;
   }
-  img:hover {
-    border: 1px solid $color-secondary;
-  }
+  // img:hover {
+  //   border: 1px solid $color-secondary;
+  // }
 
   h4 {
     font-size: 1.125rem;
@@ -100,27 +117,6 @@
   }
 }
 
-/* -- Extra Small Devices, Phones -- */
-
-@media only screen and (max-width: 767px) {
-  .container {
-    width: 100%;
-  }
-  .program {
-    margin-top: 0;
-  }
-  .program .filters .buttons {
-    width: 100%;
-  }
-}
-
-@media only screen and (min-width: 767px) {
-  .program {
-    .filters {
-      margin: 4rem auto;
-    }
-  }
-}
 // Grid
 
 .my-masonry-grid {
@@ -130,6 +126,7 @@
   margin-left: -2rem;
   width: auto;
 }
+
 .my-masonry-grid_column {
   padding-left: 2rem;
   background-clip: padding-box;
