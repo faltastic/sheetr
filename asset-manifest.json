@@ -1,15 +1,15 @@
 {
-  "main.css": "/sheetr/static/css/main.f3b35968.chunk.css",
-  "main.js": "/sheetr/static/js/main.0c387df3.chunk.js",
-  "main.js.map": "/sheetr/static/js/main.0c387df3.chunk.js.map",
+  "main.css": "/sheetr/static/css/main.7a6ff939.chunk.css",
+  "main.js": "/sheetr/static/js/main.1bb50544.chunk.js",
+  "main.js.map": "/sheetr/static/js/main.1bb50544.chunk.js.map",
   "runtime~main.js": "/sheetr/static/js/runtime~main.ab275d67.js",
   "runtime~main.js.map": "/sheetr/static/js/runtime~main.ab275d67.js.map",
   "static/css/2.272826d2.chunk.css": "/sheetr/static/css/2.272826d2.chunk.css",
   "static/js/2.13d708e4.chunk.js": "/sheetr/static/js/2.13d708e4.chunk.js",
   "static/js/2.13d708e4.chunk.js.map": "/sheetr/static/js/2.13d708e4.chunk.js.map",
   "index.html": "/sheetr/index.html",
-  "precache-manifest.6a7ec60624301d6f14a586bd46fe1090.js": "/sheetr/precache-manifest.6a7ec60624301d6f14a586bd46fe1090.js",
+  "precache-manifest.cd05c08d0a85587ac9da485df76e917e.js": "/sheetr/precache-manifest.cd05c08d0a85587ac9da485df76e917e.js",
   "service-worker.js": "/sheetr/service-worker.js",
   "static/css/2.272826d2.chunk.css.map": "/sheetr/static/css/2.272826d2.chunk.css.map",
-  "static/css/main.f3b35968.chunk.css.map": "/sheetr/static/css/main.f3b35968.chunk.css.map"
+  "static/css/main.7a6ff939.chunk.css.map": "/sheetr/static/css/main.7a6ff939.chunk.css.map"
 }
