@@ -3,6 +3,8 @@ import formatDateTime from "./formatDateTime.js";
 import { Link } from "react-router-dom";
 import ProgressiveImage from "react-progressive-image";
 
+import "./../styles/article.scss";
+
 export default function Article(props) {
   if (props.article === null || props.article === undefined) {
     return null;
@@ -28,7 +30,7 @@ export default function Article(props) {
         <div className="article-info">
           <Link to={`/program/${id}`}>
             <ProgressiveImage
-              src={`https://drive.google.com/uc?id=${image_teaser}`}
+              src={image_teaser}
               placeholder={`https://drive.google.com/uc?id=1m_AKM-NObKai64_ErCrVm8uQD3009m5z`}
             >
               {(src, loading) => (

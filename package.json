@@ -1,7 +1,6 @@
 {
   "name": "sheetr",
-  "version": "0.1.0",
-  "private": true,
+  "version": "1.0.0",
   "homepage": "https://faltastic.github.io/sheetr/",
   "dependencies": {
     "gh-pages": "^2.0.1",

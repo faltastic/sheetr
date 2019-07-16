@@ -4,7 +4,6 @@
   padding: 1rem;
   display: block;
   overflow: auto;
-  margin-top: 1rem;
   .filters {
     margin: 2rem auto;
     text-align: center;
@@ -32,88 +31,6 @@
         color: #fff;
       }
     }
-  }
-}
-
-/* -- Extra Small Devices, Phones -- */
-
-@media only screen and (max-width: 767px) {
-  .container {
-    width: 100%;
-  }
-  .program {
-    margin-top: 0;
-  }
-  .program .filters .buttons {
-    width: 100%;
-  }
-}
-
-/* Article Card*/
-
-.article-info {
-  margin: 1rem auto;
-  padding-bottom: 1rem;
-  margin-bottom: 1rem;
-  border-bottom: 3px dotted $color-primary;
-  img {
-    width: 100%;
-    margin: 0 auto;
-    display: block;
-    transition: 0.1s ease-in-out all;
-    box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    -webkit-box-sizing: border-box;
-    border: 1px solid #fff;
-    border-radius: 3px;
-  }
-  // img:hover {
-  //   border: 1px solid $color-secondary;
-  // }
-
-  h4 {
-    font-size: 1.125rem;
-    margin-top: 0.5rem;
-    font-weight: 700;
-  }
-  h4.secondary {
-    margin-bottom: 0.25rem;
-    margin-top: 0;
-    font-weight: normal;
-  }
-  .name-and-icon {
-    width: 100%;
-    text-align: right;
-    img {
-      display: inline-block;
-      padding-left: 1rem;
-      height: 1.35rem;
-      width: auto;
-      align-self: baseline;
-    }
-    h5 {
-      display: inline-block;
-      font-weight: 400;
-      font-size: 0.825rem;
-      max-width: 80%;
-    }
-  }
-
-  p {
-    font-size: 0.875rem;
-    margin-top: 1rem;
-    padding-bottom: 1rem;
-    width: 100%;
-  }
-
-  a,
-  a:visited {
-    color: $color-secondary;
-    text-decoration: none;
-  }
-  a:hover {
-    color: $color-secondary;
-    text-decoration: underline;
   }
 }
 

@@ -23,7 +23,7 @@ export default function ArticleOpen(props) {
       times,
       location,
       categories,
-      image_teaser,
+      image,
       text,
       photoCredit,
       photoLink,
@@ -43,8 +43,7 @@ export default function ArticleOpen(props) {
           <br />
 
           <ProgressiveImage
-            src={`https://drive.google.com/uc?id=${image_teaser}`}
-            //placeholder='https://drive.google.com/uc?id=1tJD_nYc43SqmWbCzgmbSIKpoxR-BevrT'>
+            src={image}
             placeholder={`https://drive.google.com/uc?id=1m_AKM-NObKai64_ErCrVm8uQD3009m5z`}
           >
             {(src, loading) => (

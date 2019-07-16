@@ -10,12 +10,12 @@ import ArticleOpen from "./ArticleOpen.js";
 import "./../styles/program.scss";
 
 const dayButtons = ["1 May", "2 May", "3 May", "4 May"];
-const categoryButtons = ["Party", "Exhibition"];
+const categoryButtons = ["All", "Exhibition", "Party"];
 
 const ArticlesAll = props => {
   const [visibleArticles, setVisibleArticles] = useState(false);
-  const [theDay, setTheDay] = useState(1);
-  const [theCat, setTheCat] = useState(false);
+  const [theDay, setTheDay] = useState(false);
+  const [theCat, setTheCat] = useState("All");
   const [articleIsOpen, setArticleIsOpen] = useState(false);
   const [articleID, setArticleID] = useState(false);
 
@@ -32,7 +32,7 @@ const ArticlesAll = props => {
     let filtered = props.articles;
     if (filter.day !== false) {
       filtered = filtered.filter(article => article.days.includes(filter.day));
-    } else if (filter.cat !== false) {
+    } else if (filter.cat !== false && filter.cat !== "All") {
       filtered = filtered.filter(article =>
         article.categories.includes(filter.cat)
       );
@@ -85,6 +85,19 @@ const ArticlesAll = props => {
         <div>
           <div className="filters">
             <div className="buttons button-group filters-button-group">
+              {categoryButtons.map((btn, key) => {
+                return (
+                  <button
+                    key={key}
+                    className={"button" + (theCat === btn ? " is-checked" : "")}
+                    onClick={() => {
+                      filterArticles({ day: false, cat: btn });
+                    }}
+                  >
+                    {btn}
+                  </button>
+                );
+              })}
               {dayButtons.map((btn, key) => {
                 return (
                   <button
@@ -94,19 +107,6 @@ const ArticlesAll = props => {
                     }
                     onClick={() => {
                       filterArticles({ day: key + 1, cat: false });
-                    }}
-                  >
-                    {btn}
-                  </button>
-                );
-              })}
-              {categoryButtons.map((btn, key) => {
-                return (
-                  <button
-                    key={key}
-                    className={"button" + (theCat === btn ? " is-checked" : "")}
-                    onClick={() => {
-                      filterArticles({ day: false, cat: btn });
                     }}
                   >
                     {btn}
