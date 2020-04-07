@@ -6,7 +6,7 @@ import EventsAll from "./AllArticles.js";
 
 const sheetID = "117qsaEFQLenUyr6RPyYMPYJtkur_7vBK_NA9hepH6xQ";
 
-export default function Sheetr(props) {
+const Sheetr = ({ match }) => {
   const [sheet, setSheet] = useState({ data: [] });
   const [dataLoading, setDataLoading] = useState(true);
   const [loadingError, setLoadingError] = useState(false);
@@ -15,7 +15,7 @@ export default function Sheetr(props) {
     try {
       Tabletop.init({
         key: sheetID,
-        callback: googleData => {
+        callback: (googleData) => {
           setSheet({ data: googleData });
           sessionStorage.setItem("savedsheet", JSON.stringify(googleData));
         },
@@ -29,7 +29,7 @@ export default function Sheetr(props) {
     }
   };
 
-  const { params } = props.match;
+  const { params } = match;
 
   useEffect(() => {
     const savedsheet = sessionStorage.getItem("savedsheet");
@@ -52,4 +52,6 @@ export default function Sheetr(props) {
       <EventsAll articles={sheet.data} articleIDRoute={params.id} />
     </div>
   );
-}
+};
+
+export default Sheetr;

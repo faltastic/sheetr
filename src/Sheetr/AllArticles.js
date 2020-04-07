@@ -1,6 +1,7 @@
 import React from "react";
 import { useState, useEffect } from "react";
 import { withRouter } from "react-router";
+import PropTypes from "prop-types";
 
 import Masonry from "react-masonry-css";
 
@@ -12,14 +13,14 @@ import "./../styles/program.scss";
 const dayButtons = ["1 May", "2 May", "3 May", "4 May"];
 const categoryButtons = ["All", "Exhibition", "Party"];
 
-const ArticlesAll = props => {
+const AllArticles = ({ articles, articleIDRoute }) => {
   const [visibleArticles, setVisibleArticles] = useState(false);
   const [theDay, setTheDay] = useState(false);
   const [theCat, setTheCat] = useState("All");
   const [articleIsOpen, setArticleIsOpen] = useState(false);
   const [articleID, setArticleID] = useState(false);
 
-  const openArticle = id => {
+  const openArticle = (id) => {
     setArticleID(id);
     setArticleIsOpen(true);
   };
@@ -28,17 +29,19 @@ const ArticlesAll = props => {
     setArticleIsOpen(false);
   };
 
-  const filterArticles = filter => {
-    let filtered = props.articles;
+  const filterArticles = (filter) => {
+    let filtered = articles;
     if (filter.day !== false) {
-      filtered = filtered.filter(article => article.days.includes(filter.day));
+      filtered = filtered.filter((article) =>
+        article.days.includes(filter.day)
+      );
     } else if (filter.cat !== false && filter.cat !== "All") {
-      filtered = filtered.filter(article =>
+      filtered = filtered.filter((article) =>
         article.categories.includes(filter.cat)
       );
     }
     setVisibleArticles(
-      filtered.map(article => {
+      filtered.map((article) => {
         return (
           <Article
             article={article}
@@ -54,11 +57,8 @@ const ArticlesAll = props => {
   };
 
   useEffect(() => {
-    if (
-      props.articleIDRoute > 0 &&
-      props.articleIDRoute <= props.articles.length
-    ) {
-      openArticle(props.articleIDRoute);
+    if (articleIDRoute > 0 && articleIDRoute <= articles.length) {
+      openArticle(articleIDRoute);
     }
 
     let savedfilters = sessionStorage.getItem("filters");
@@ -70,15 +70,13 @@ const ArticlesAll = props => {
     } else {
       filterArticles({ day: theDay, cat: theCat });
     }
-  }, [props]);
+  }, [articles, articleIDRoute]);
 
   return (
     <div className="program" id="the-program">
       {articleIsOpen ? (
         <ArticleOpen
-          article={props.articles
-            .filter(article => article.id === articleID)
-            .pop()}
+          article={articles.filter((article) => article.id === articleID).pop()}
           closeArticle={closeArticle}
         />
       ) : (
@@ -135,4 +133,9 @@ const ArticlesAll = props => {
   );
 };
 
-export default withRouter(ArticlesAll);
+AllArticles.propTypes = {
+  articles: PropTypes.arrayOf(PropTypes.objectOf(PropTypes.string)).isRequired,
+  articleIDRoute: PropTypes.string,
+};
+
+export default withRouter(AllArticles);

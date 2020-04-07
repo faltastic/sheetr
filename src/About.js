@@ -2,7 +2,7 @@ import React from "react";
 import { Grid, Row, Col } from "react-flexbox-grid";
 import "./styles/about.scss";
 
-export default function About() {
+const About = () => {
   return (
     <section className="about large-text">
       <Grid fluid>
@@ -95,4 +95,5 @@ export default function About() {
       </Grid>
     </section>
   );
-}
+};
+export default About;

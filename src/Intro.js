@@ -5,7 +5,7 @@ import ProgressiveImage from "react-progressive-image";
 
 import "./styles/intro.scss";
 
-export default function Intro(props) {
+const Intro = () => {
   return (
     <section>
       <Grid fluid>
@@ -142,4 +142,6 @@ export default function Intro(props) {
       </Grid>
     </section>
   );
-}
+};
+
+export default Intro;

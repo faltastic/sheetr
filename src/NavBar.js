@@ -4,7 +4,7 @@ import { Grid, Row, Col } from "react-flexbox-grid";
 
 import "./styles/nav.scss";
 
-export default function NavBar(props) {
+const NavBar = () => {
   return (
     <Grid fluid>
       <Col xs={12}>
@@ -35,4 +35,6 @@ export default function NavBar(props) {
       </Col>
     </Grid>
   );
-}
+};
+
+export default NavBar;

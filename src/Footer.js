@@ -3,7 +3,7 @@ import { Grid, Row, Col } from "react-flexbox-grid";
 
 import "./styles/footer.scss";
 
-export default function Footer(props) {
+const Footer = () => {
   return (
     <footer>
       <Grid fluid>
@@ -34,4 +34,6 @@ export default function Footer(props) {
       </Grid>
     </footer>
   );
-}
+};
+
+export default Footer;
