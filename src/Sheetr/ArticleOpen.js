@@ -6,6 +6,8 @@ import formatDateTime from "./formatDateTime.js";
 import { Grid, Row, Col } from "react-flexbox-grid";
 import ProgressiveImage from "react-progressive-image";
 
+import { Calendar, Users, Tag, MapPin } from "react-feather";
+
 import "./../styles/articleopen.scss";
 
 const ArticleOpen = ({
@@ -70,31 +72,21 @@ const ArticleOpen = ({
           <Col xs={12} md={4}>
             <Row>
               <div className="icon-and-info">
-                <img
-                  alt="when"
-                  src="http://www.unframedfestival.de/images/ico/icons8-calendar-50.png"
-                />
+                <Calendar size={22} strokeWidth="2" />
+
                 <h4>{formatDateTime(days, times, id)}</h4>
               </div>
               <div className="icon-and-info">
-                <img
-                  alt="who"
-                  src="http://www.unframedfestival.de/images/ico/icons8-contacts-32.png"
-                />
+                <Users size={22} strokeWidth="2" />
                 <h4>{artists}</h4>
               </div>
               <div className="icon-and-info">
-                <img
-                  alt="categories"
-                  src="http://www.unframedfestival.de/images/ico/icons8-two-tickets-50.png"
-                />
+                <Tag size={22} strokeWidth="2" />
                 <h4>{categories}</h4>
               </div>
               <div className="icon-and-info">
-                <img
-                  alt="where"
-                  src="http://www.unframedfestival.de/images/ico/icons8-map-pin-50.png"
-                />
+                <MapPin size={22} strokeWidth="2" />
+
                 <h4>{location}</h4>
               </div>
             </Row>

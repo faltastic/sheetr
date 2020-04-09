@@ -1,6 +1,8 @@
 import React from "react";
 import { Grid, Row, Col } from "react-flexbox-grid";
 
+import { Facebook, Instagram } from "react-feather";
+
 import "./styles/footer.scss";
 
 const Footer = () => {
@@ -12,16 +14,15 @@ const Footer = () => {
             <center>
               <p>SHEETR</p>
               <a href="https://www.facebook.com/">
-                <img
-                  alt="facebook"
-                  src="http://www.unframedfestival.de/images/ico/social/facebook-3-48.png"
-                />
+                <Facebook size={48} fill="#ea148c" strokeWidth={0} />
               </a>
-              &nbsp; &nbsp;&nbsp;
-              <a href="http://www.instagram.com/">
-                <img
-                  alt="instagram"
-                  src="http://www.unframedfestival.de/images/ico/social/instagram-48.png"
+              &nbsp;&nbsp;&nbsp;
+              <a href="https://www.instagram.com/">
+                <Instagram
+                  size={48}
+                  fill="#ea148c"
+                  color="#000"
+                  strokeWidth={2}
                 />
               </a>
               <p>

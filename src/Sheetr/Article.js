@@ -5,6 +5,8 @@ import formatDateTime from "./formatDateTime.js";
 import { Link } from "react-router-dom";
 import ProgressiveImage from "react-progressive-image";
 
+import { Calendar, Tag } from "react-feather";
+
 import "./../styles/article.scss";
 
 const Article = ({
@@ -53,21 +55,13 @@ const Article = ({
         {artists && <h4 className="secondary">{artists}</h4>}
         <div className="name-and-icon">
           <h5>{formatDateTime(days, times, id)}</h5>
-          <img
-            className="icon"
-            src="http://www.unframedfestival.de/images/ico/icons8-calendar-50.png"
-            alt="calender"
-          />
+          <Calendar size={16} strokeWidth="1" />
         </div>
         <div className="name-and-icon">
           <h5>
             {categories} @ {location}
           </h5>
-          <img
-            className="icon"
-            src="http://www.unframedfestival.de/images/ico/icons8-two-tickets-50.png"
-            alt="category"
-          />
+          <Tag size={16} strokeWidth="1" />
         </div>
         <p>
           <span dangerouslySetInnerHTML={createMarkup(teaser_text)} />
