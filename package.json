@@ -12,7 +12,7 @@
     "react-masonry-css": "^1.0.14",
     "react-progressive-image": "^0.6.0",
     "react-router-dom": "^5.1.2",
-    "react-scripts": "2.1.5",
+    "react-scripts": "5.0.1",
     "tabletop": "^1.6.2"
   },
   "scripts": {
